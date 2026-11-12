@@ -4,5 +4,5 @@ dist
 data/
 data/uploads
 .env
-src/routeTree.gen.ts
 .vercel
+.tanstack
