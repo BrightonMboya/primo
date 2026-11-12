@@ -129,7 +129,7 @@ export const orders = pgTable(
     momoRef: text('momo_ref'),
     customerName: text('customer_name').notNull(),
     customerPhone: text('customer_phone').notNull(),
-    area: text('area'),
+    area: text('area'), // no longer used (delivery area was removed); kept so old orders load
     deliveryFee: integer('delivery_fee').notNull().default(0),
     credit: integer('credit').notNull().default(0),
     total: integer('total').notNull().default(0),

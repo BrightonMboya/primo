@@ -13,7 +13,6 @@ export type CheckoutInput = {
   channel: Channel
   payment: Payment | null
   momoRef?: string
-  area?: string
   deliveryFee?: number
   creditRefundId?: number | null
 }
@@ -56,7 +55,6 @@ export async function checkout(input: CheckoutInput, who: SessionUser) {
         momoRef: input.momoRef?.trim() || null,
         customerName: input.customerName.trim(),
         customerPhone: input.customerPhone.trim(),
-        area: input.area?.trim() || null,
         deliveryFee: input.deliveryFee ?? 0,
         credit,
         total: isSale ? subtotal - credit : 0,
@@ -105,7 +103,6 @@ const orderColumns = {
   momoRef: orders.momoRef,
   customerName: orders.customerName,
   customerPhone: orders.customerPhone,
-  area: orders.area,
   deliveryFee: orders.deliveryFee,
   credit: orders.credit,
   total: orders.total,

@@ -26,7 +26,6 @@ function Checkout() {
   const [payment, setPayment] = useState<Payment | null>(isSale ? 'cash' : null)
   const [paidAlready, setPaidAlready] = useState(false)
   const [momoRef, setMomoRef] = useState('')
-  const [area, setArea] = useState('')
   const [fee, setFee] = useState('')
   const { busy, error, run } = useAction()
 
@@ -45,7 +44,6 @@ function Checkout() {
           channel,
           payment: showPayment ? payment : null,
           momoRef: payment === 'momo' ? momoRef : undefined,
-          area: isSale ? undefined : area,
           deliveryFee: isSale ? undefined : toAmount(fee || 0),
           creditRefundId: credit?.refundId ?? null,
         },
@@ -110,7 +108,6 @@ function Checkout() {
       <div className="stack">
         <input className="input" placeholder="Name or Instagram handle" value={name} onChange={(e) => setName(e.target.value)} autoComplete="off" />
         <input className="input" placeholder="Phone number" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} autoComplete="off" />
-        {!isSale && <input className="input" placeholder="Delivery area, e.g. Kimihurura" value={area} onChange={(e) => setArea(e.target.value)} />}
       </div>
 
       {isSale && (

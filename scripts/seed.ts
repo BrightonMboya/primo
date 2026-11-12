@@ -65,8 +65,8 @@ const firstItem = async (orderId: number) => {
 // A few realistic transactions so every screen has something to show.
 await checkout({ kind: 'sale', variantIds: [await v(pant.id, 'Red', 'M')], customerName: '@ama.styles', customerPhone: '078 811 2233', channel: 'instagram', payment: 'momo', momoRef: '7741029831' }, sales)
 await checkout({ kind: 'sale', variantIds: [await v(bodysuit.id, 'Black', 'S'), await v(bodysuit.id, 'White', 'M')], customerName: 'Esi Mensah', customerPhone: '020 555 0101', channel: 'shop', payment: 'cash' }, sales)
-await checkout({ kind: 'delivery', variantIds: [await v(bodysuit.id, 'White', 'M'), await v(pant.id, 'Black', 'M')], customerName: '@efua.k', customerPhone: '078 555 0193', channel: 'instagram', payment: null, area: 'East Legon', deliveryFee: 3000 }, sales)
-const khaki = await checkout({ kind: 'delivery', variantIds: [await v(bodysuit.id, 'Khaki', 'S')], customerName: '@nana.ad', customerPhone: '026 444 7788', channel: 'instagram', payment: 'momo', area: 'Osu' }, sales)
+await checkout({ kind: 'delivery', variantIds: [await v(bodysuit.id, 'White', 'M'), await v(pant.id, 'Black', 'M')], customerName: '@efua.k', customerPhone: '078 555 0193', channel: 'instagram', payment: null, deliveryFee: 3000 }, sales)
+const khaki = await checkout({ kind: 'delivery', variantIds: [await v(bodysuit.id, 'Khaki', 'S')], customerName: '@nana.ad', customerPhone: '026 444 7788', channel: 'instagram', payment: 'momo' }, sales)
 await closeDelivery({ orderId: khaki.orderId, kept: [await firstItem(khaki.orderId)], returned: [], payment: null }, sales)
 const credit = await processReturn({ itemId: await firstItem(khaki.orderId), mode: 'exchange', refundMethod: null }, sales)
 await checkout({ kind: 'sale', variantIds: [await v(bodysuit.id, 'Khaki', 'M')], customerName: '@nana.ad', customerPhone: '026 444 7788', channel: 'instagram', payment: 'momo', creditRefundId: credit.refundId }, sales)

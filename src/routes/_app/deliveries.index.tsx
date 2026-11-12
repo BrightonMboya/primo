@@ -23,7 +23,7 @@ function Deliveries() {
             <div className="grow">
               <div style={{ fontWeight: 500 }}>{order.customerName}</div>
               <div className="small muted">
-                {items.length === 1 ? `${items[0].name} ${items[0].color} ${items[0].size}` : `${items.length} items`} · {order.area}
+                {items.length === 1 ? `${items[0].name} ${items[0].color} ${items[0].size}` : `${items.length} items`}
               </div>
               <div className="tiny faint">Left {when(order.createdAt)} · {order.payment ? 'Paid' : `Collect ${rwf(items.reduce((s, i) => s + i.price, 0))}`}</div>
             </div>

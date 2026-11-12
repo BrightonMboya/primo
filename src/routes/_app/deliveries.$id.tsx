@@ -66,7 +66,7 @@ function DeliveryDetail() {
       <div className="mt16">
         <h1 className="title">{order.customerName}</h1>
         <p className="muted small" style={{ margin: '4px 0 0' }}>
-          <a href={`tel:${order.customerPhone}`} style={{ textDecoration: 'underline' }}>{order.customerPhone}</a> · {order.area} · left {when(order.createdAt)}
+          <a href={`tel:${order.customerPhone}`} style={{ textDecoration: 'underline' }}>{order.customerPhone}</a> · left {when(order.createdAt)}
         </p>
         <p className="muted small" style={{ margin: '4px 0 0' }}>{order.payment ? `Paid up front by ${order.payment === 'momo' ? 'MoMo' : 'cash'}` : 'Pay on delivery'}</p>
       </div>

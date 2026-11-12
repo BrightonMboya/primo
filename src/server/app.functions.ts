@@ -186,12 +186,10 @@ export const doCheckout = createServerFn({ method: 'POST' })
         channel: z.enum(['shop', 'instagram']),
         payment: z.enum(['cash', 'momo']).nullable(),
         momoRef: text(40).optional(),
-        area: text(80).optional(),
         deliveryFee: money.optional(),
         creditRefundId: id.nullable().optional(),
       })
-      .refine((d) => d.kind === 'delivery' || d.payment !== null, { message: 'Choose Cash or MoMo', path: ['payment'] })
-      .refine((d) => d.kind === 'sale' || (d.area ?? '').length > 0, { message: 'Enter the delivery area', path: ['area'] }),
+      .refine((d) => d.kind === 'delivery' || d.payment !== null, { message: 'Choose Cash or MoMo', path: ['payment'] }),
   )
   .handler(async ({ data, context }) => checkout(data, context.user))
 

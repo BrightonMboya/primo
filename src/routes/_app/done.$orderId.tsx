@@ -24,7 +24,7 @@ function Done() {
         <p className="muted" style={{ margin: 0 }}>
           {items.length === 1 ? `${first.name} · ${first.color} ${first.size}` : `${items.length} items`}
           <br />
-          {isSale ? `${rwf(order.total)} · ${order.payment === 'momo' ? 'MoMo' : 'Cash'}` : `${order.customerName} · ${order.area ?? ''}`}
+          {isSale ? `${rwf(order.total)} · ${order.payment === 'momo' ? 'MoMo' : 'Cash'}` : order.customerName}
         </p>
       </div>
 
