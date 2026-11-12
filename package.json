@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "start": "node server.mjs",
+    "start": "node serve.mjs",
     "seed": "node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/seed.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node --env-file-if-exists=.env node_modules/drizzle-kit/bin.cjs migrate",

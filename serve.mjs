@@ -1,4 +1,5 @@
-// Production server: `npm run build && npm start`
+// Production server for a normal machine: `npm run build && npm start`.
+// Deliberately NOT named server.mjs: on Vercel, Nitro auto-detects a root server.mjs as its entry.
 // Serves the built files in dist/client and hands everything else to the app.
 import { createServer } from 'node:http'
 import { createReadStream, statSync } from 'node:fs'

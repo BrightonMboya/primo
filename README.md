@@ -110,5 +110,5 @@ src/server/storage.server.ts    photo upload (Supabase Storage or local)
 src/server/app.functions.ts     the API the screens call, with validation and role checks
 src/routes/                     screens (file-based routes), /api/auth/* for Better Auth
 public/                         manifest, service worker, icons
-server.mjs                      plain Node production server
+serve.mjs                       plain Node production server (not named server.mjs: Nitro would treat that as its entry on Vercel)
 ```
