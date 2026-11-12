@@ -1,0 +1,8 @@
+node_modules
+.output
+dist
+data/
+data/uploads
+.env
+src/routeTree.gen.ts
+.vercel
